@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ Employee List
+{% endblock %}
+
+ {% load static %}
+
+{% block bodyblock %}
+
+<body>
+    <section class="list-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped table-bordered dt-responsive nowrap responsive order-column stripe" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Employee Name</th>
+                                    <th>department</th>
+                                    <th>DOB</th>
+                                    <!--      
+                                    <th>Date of Birth / જન્મતારીખ</th>
+                                    <th>Phone no./ ફોન નંબર</th>
+                                     -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for employee in employees %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ employee.full_name }}</td>
+                                    <td>{{ employee.department }}</td>
+                                    <td>{{ employee.dob }}</td>
+                                    <!-- <td>{{ item.birth_date }}</td>
+                                    <td>{{ item.area }}</td> -->
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+{% endblock %}

@@ -6,8 +6,8 @@ class AbstractBaseModel(models.Model):
     All models should extend this class.
     """
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, auto_created=True)
+    updated_at = models.DateTimeField(auto_now=True, auto_created=True)
 
     class Meta:
         abstract = True
@@ -28,4 +28,4 @@ class Employee(AbstractBaseModel):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
-        return (self.full_name, self.department)
+        return (self.full_name)
