@@ -5,3 +5,6 @@ from .models import Employee
 def emp_list(request):
     employees = Employee.objects.all()
     return render(request, 'list.html', {'employees': employees})
+
+def home(request):
+    return render(request, 'home.html')
