@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
 from .form import EmployeeCreateForm
-
 from .models import Employee
+
+
 # Create your views here.
 def emp_list(request):
     employees = Employee.objects.all()

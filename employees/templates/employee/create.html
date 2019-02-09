@@ -9,18 +9,27 @@
 <form method="POST" action="">
     {% csrf_token %}
     <div class="form-row">
-        <div class="col">
+        <div class="form-group col-md-6 mb-0">
             {{ form.full_name | as_crispy_field }}
         </div>
-        <div class="col">
+        <div class="form-group col-md-6 mb-0">
             {{ form.department | as_crispy_field }}
-        </div>
-        <div class="col">
+        </div>        
+    </div>
+    <!-- Refer to sarsai project -->
+    <div class="form-row">
+        <div class="col form-group">
             {{ form.emp_id | as_crispy_field }}
         </div>
+        <div class="col form-group">
+            {{ form.dob | as_crispy_field }}
+        </div>
+        <div class="col form-group">
+            {{ form.date_joined | as_crispy_field }}
+        </div>
     </div>
-    {{ form|crispy }}
-        <button type="submit" class="btn btn-primary">SUBMIT</button>
+
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 {% endblock %}
