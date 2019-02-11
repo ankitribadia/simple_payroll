@@ -5,11 +5,19 @@ from crispy_forms.layout import Submit
 
 from .models import Employee
 
+# for adding datepicker
+class DateInput(forms.DateInput):
+    input_type = 'date'
 class EmployeeCreateForm(forms.ModelForm):
 
     class Meta:
         model = Employee
         fields = ['full_name', 'emp_id', 'dob', 'date_joined', 'department'] 
+        widgets = {
+            'dob' : DateInput(),
+            'date_joined' : DateInput()
+        }
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
