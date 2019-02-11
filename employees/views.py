@@ -17,8 +17,8 @@ def employee_create(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        return render(request, 'list.html')
-
+        employees = Employee.objects.all()
+        return render(request, 'list.html', {'employees': employees})
     context = {
         "title" : "Create Employee",
         "form" : form

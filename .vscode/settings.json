@@ -1,3 +1,9 @@
 {
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "files.associations": {
+        "**/templates/*.html": "django-html",
+        "**/templates/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "python.pythonPath": "C:\\Users\\Dell\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
 }
