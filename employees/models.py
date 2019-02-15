@@ -22,10 +22,11 @@ class Department(AbstractBaseModel):
 
 class Employee(AbstractBaseModel):
     full_name = models.CharField(max_length=200)
-    emp_id = models.IntegerField()
+    emp_id = models.IntegerField(default=0)
     dob = models.DateField()
     date_joined = models.DateField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    salary = models.IntegerField(default=0)
 
     def __str__(self):
         return (self.full_name)

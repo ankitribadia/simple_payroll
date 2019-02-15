@@ -19,7 +19,7 @@ body{
 }
 .navbar .navbar-toggler:focus{
 	outline: none;
-	border-color: #393185;
+	border-color: rgba(255, 255, 255, 0.1);
 }
 .title-wrapper {
 	margin: 20px 0;
@@ -119,7 +119,7 @@ form.user-profile {
 	content: '';
 	width: 30px;
 	height: 2px;
-	background-color: #393185;	
+	background-color: #ffff;	
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -136,7 +136,7 @@ form.user-profile {
 	left: 51%;
 	right: 51%;
 	bottom: 0;
-	background: #393185;
+	background: #ffff;
 	height: 4px;
 	-webkit-transition: all 0.4s ease-out;
 	-ms-transition: all 0.4s ease-out;
@@ -165,7 +165,7 @@ form.user-profile {
 	content: "\f0c9";
 	font-family: FontAwesome;
 	font-size: 30px;
-	color: #393185;
+	color: #ffff;
 }
 .navbar-toggler.collapsed .navbar-toggler-icon:before{
 	color: #8d8d8d;

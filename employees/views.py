@@ -9,8 +9,10 @@ def emp_list(request):
     employees = Employee.objects.all()
     return render(request, 'list.html', {'employees': employees})
 
+
 def home(request):
     return render(request, 'home.html')
+
 
 def employee_create(request):
     form = EmployeeCreateForm(request.POST or None)
@@ -20,7 +22,7 @@ def employee_create(request):
         employees = Employee.objects.all()
         return render(request, 'list.html', {'employees': employees})
     context = {
-        "title" : "Create Employee",
-        "form" : form
+        "title": "Create Employee",
+        "form": form
     }
     return render(request, "employee/create.html", context)
