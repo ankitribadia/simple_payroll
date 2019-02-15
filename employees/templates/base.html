@@ -11,21 +11,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href='{% static "css/bootstrap-datepicker.min.css" %}'>
+    {% comment %} <link rel="stylesheet" href='{% static "css/bootstrap-datepicker.min.css" %}'> {% endcomment %}
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    {% comment %} <script src="https://code.jquery.com/jquery-3.3.1.js"></script> {% endcomment %}
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> {% endcomment %}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src='{% static "js/bootstrap-datepicker.min.js" %}'></script>
+    {% comment %} <script type="text/javascript" src='{% static "js/bootstrap-datepicker.min.js" %}'></script> {% endcomment %}
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/fixedcolumns/3.2.5/js/dataTables.fixedColumns.min.js"></script>
+    <script type="text/javascript" src='{% static "js/custom.js" %}'></script>
 
-    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    {% comment %} <link rel="stylesheet" href='{% static "css/style.css" %}'> {% endcomment %}
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>

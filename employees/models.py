@@ -1,6 +1,9 @@
 from django.db import models
+from decimal import Decimal
 
 # Create your models here.
+
+
 class AbstractBaseModel(models.Model):
     """AbstractBaseModel contains common fields between models.
     All models should extend this class.
@@ -20,13 +23,16 @@ class Department(AbstractBaseModel):
         return self.department
 
 
+zero = Decimal('0.00')
+
+
 class Employee(AbstractBaseModel):
     full_name = models.CharField(max_length=200)
     emp_id = models.IntegerField(default=0)
-    dob = models.DateField()
-    date_joined = models.DateField()
+    dob = models.DateField(blank=True)
+    date_joined = models.DateField(blank=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    salary = models.IntegerField(default=0)
+    salary = models.DecimalField(max_digits=9, decimal_places=2, default=zero)
 
     def __str__(self):
         return (self.full_name)

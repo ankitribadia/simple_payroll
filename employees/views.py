@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .form import EmployeeCreateForm
 from .models import Employee
@@ -6,8 +6,11 @@ from .models import Employee
 
 # Create your views here.
 def emp_list(request):
-    employees = Employee.objects.all()
-    return render(request, 'list.html', {'employees': employees})
+    context = {
+        "title": "Directory",
+        'employees': Employee.objects.all()
+    }
+    return render(request, 'list.html', context)
 
 
 def home(request):
@@ -19,8 +22,9 @@ def employee_create(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        employees = Employee.objects.all()
-        return render(request, 'list.html', {'employees': employees})
+        return redirect('list')
+        # employees = Employee.objects.all()
+        # return render(request, 'list.html', {'employees': employees})
     context = {
         "title": "Create Employee",
         "form": form

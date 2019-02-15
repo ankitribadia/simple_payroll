@@ -16,6 +16,9 @@ class EmployeeCreateForm(forms.ModelForm):
         fields = [
             'full_name', 'emp_id', 'dob', 'date_joined', 'department', 'salary'
             ]
+        labels = {
+            'dob': 'Date of Birth'
+        }
         widgets = {
             'dob': DateInput(),
             'date_joined': DateInput()
