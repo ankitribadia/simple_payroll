@@ -6,16 +6,25 @@ li a {
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
-  li a:hover:not(.active) {
-    color: black;
+ul.nav li {
+  margin-right: 5px;
+}
+
+  ul.nav li:hover:not(.active) a {
+    color: white;
     text-decoration: none;
+    -webkit-box-shadow: inset 0px 0px 8px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 8px 4px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 8px 4px rgba(0,0,0,0.75);
+    border-radius: 5px;
   }
   
-  ul.nav .active {
-    background-color: rgb(76, 175, 79);
-    border-radius: 3px;
+  ul.nav li.active a{
+    color: white ;
+    background-color: #0056E9;
+    border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgb(0, 0, 0, 0.5);
   }
