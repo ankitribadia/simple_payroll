@@ -46,7 +46,7 @@ zero = Decimal('0.00')
 
 
 class Employee(AbstractBaseModel):
-    full_name = models.CharField(max_length=200)
+    full_name = models.CharField(max_length=200, unique=True)
     emp_id = models.IntegerField(default=0)
     dob = models.DateField(blank=True)
     date_joined = models.DateField(blank=True)

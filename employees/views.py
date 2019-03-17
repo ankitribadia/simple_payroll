@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
+from rest_framework import viewsets
+
 
 from .form import EmployeeCreateForm
 from .models import Employee
+from .serializers import EmployeeSerializer
 
 
 # Create your views here.
@@ -29,3 +32,9 @@ def employee_create(request):
         "form": form
     }
     return render(request, "employee/create.html", context)
+
+
+# adding the api view of employee
+class ListEmployeesView(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
