@@ -26,10 +26,11 @@ class Department(AbstractBaseModel):
 class Shift(models.Model):
     shift_name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
+    breakAllowed = models.BooleanField(default=False)
     time_start = models.CharField(max_length=5)
     time_end = models.CharField(max_length=5)
     shift_duration = models.CharField(max_length=5)
-    shift_month_duration = models.CharField(max_length=5)
+    shift_month_duration = models.CharField(max_length=6)
 
     def __str__(self):
         return self.shift_name

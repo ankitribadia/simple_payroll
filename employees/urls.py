@@ -4,6 +4,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'employeelist', views.ListEmployeesView)
+router.register(r'shifts', views.ShiftView)
 
 urlpatterns = [
     path('', views.home, name='home'),

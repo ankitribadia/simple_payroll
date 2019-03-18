@@ -3,8 +3,8 @@ from rest_framework import viewsets
 
 
 from .form import EmployeeCreateForm
-from .models import Employee
-from .serializers import EmployeeSerializer
+from .models import Employee, Shift
+from .serializers import EmployeeSerializer, ShiftSerializer
 
 
 # Create your views here.
@@ -38,3 +38,8 @@ def employee_create(request):
 class ListEmployeesView(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+
+
+class ShiftView(viewsets.ModelViewSet):
+    queryset = Shift.objects.all()
+    serializer_class = ShiftSerializer
