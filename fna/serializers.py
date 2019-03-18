@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import AttendanceLog
+from .models import AttendanceLog, PayrollLog, LoansLog
 
 
 class AttendanceSerializer(serializers.ModelSerializer):
@@ -19,4 +19,34 @@ class AttendanceSerializer(serializers.ModelSerializer):
             'moveOut',
             'moveIn',
             'duration'
+        )
+
+
+class PayrollSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PayrollLog
+        fields = (
+            'empId',
+            'empName',
+            'shiftId',
+            'payMonth',
+            'payYear',
+            'salary',
+            'hourlyRate',
+            'totalWorkDuration',
+            'totalPayout',
+            'loan',
+            'netSalary',
+            'paidOff'
+        )
+
+
+class LoansSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LoansLog
+        fields = (
+            'empId',
+            'credit',
+            'debit',
+            'entryDate'
         )
