@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'employees',
     'rest_framework',
     'crispy_forms',  # crispy forms
+    'fna',
 ]
 
 # template pack for crispy forms
